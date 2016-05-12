@@ -34,3 +34,15 @@ Shading.QueryPresences((now, max) => {
     // max : 샤드 사이즈
 });
 ```
+
+ShadNo Masking
+----
+`Bootstrap`, `Schedule`은 특정 인스턴스에서만 실행되도록 마스킹 할 수 있습니다.<br>
+(이 기능은 주기적으로 `QueryPresences`등을 돌릴 때 모든 노드에서 다돌아가면 정신없으니까 용도임
+```cs
+[ShadNo(1)]
+[Bootstrap]
+public void OnBootstrap() {
+    // 이 코드는 1번 인스턴스에서만 실행됩니다.
+}
+```
