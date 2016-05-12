@@ -69,9 +69,11 @@ __설정 변경하기__
 public void OnBootstrap() {
   // STDOUT 로깅 설정
   Config.logMessage = true; // 봇이 수신한 메세지를 출력합니다.
-  
   Config.logTrace = true; // 디버그 정보를 출력합니다.
                           // 이 정보는 정규식 매칭 결과 등을 포함합니다.
+                          
+  // 메세지 설정
+  Config.ignoreBotMessage = true; // 봇이 보낸 메세지를 무시합니다.
 }
 ```
 
