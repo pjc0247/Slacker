@@ -1,6 +1,8 @@
 ScriptOption
 ====
 
+`script_option.json` 파일을 수정하여 스크립트 엔진의 옵션을 변경할 수 있습니다.
+
 ```json
 {
     "assembly_ref" : [
