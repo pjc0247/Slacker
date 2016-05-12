@@ -41,7 +41,6 @@ public void OnEcho(Message msg){
 }
 ```
 
-
 Message 구조체
 ----
 ```cs
@@ -52,6 +51,27 @@ public class Message {
   
   // System.Text.RegularExpressions
   public Match matchData { get; set; }
+}
+```
+
+부트스트랩
+----
+__부트스트랩 함수 추가하기__
+```cs
+[Bootstrap]
+public void OnBootstrap() {
+  // 이 함수는 스크립트 재 로드시에 실행됩니다.	
+}
+```
+__설정 변경하기__
+```cs
+[Bootstrap]
+public void OnBootstrap() {
+  // STDOUT 로깅 설정
+  Config.logMessage = true; // 봇이 수신한 메세지를 출력합니다.
+  
+  Config.logTrace = true; // 디버그 정보를 출력합니다.
+                          // 이 정보는 정규식 매칭 정보 등을 포함합니다.
 }
 ```
 
