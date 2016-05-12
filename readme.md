@@ -5,6 +5,10 @@ Slacker
 
 Make Your OWN Bot.
 
+Screenshot
+----
+![bot](bot.png)
+
 토큰 가져오기
 ----
 __https://api.slack.com/docs/oauth-test-tokens__
