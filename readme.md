@@ -32,7 +32,7 @@ public void OnHello(Message msg) {
 ```cs
 // 정규식 캡처
 [Subscribe("^따라해\\s(.+)$")]
-public void Echo(Message msg){
+public void OnEcho(Message msg){
 	Slack.SendMessage(msg.channel, msg.matchData.Groups[1].Value);
 }
 ```
