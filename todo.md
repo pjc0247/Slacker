@@ -10,6 +10,7 @@ TDO=
 ----
 * 명령줄 인수 지원
 * Bot Spawner
+  * 동시에 봇을 여러개 띄운다.
 
 GistPowered BOT
 ----
