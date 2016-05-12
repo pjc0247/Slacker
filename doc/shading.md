@@ -25,3 +25,12 @@ public void OnShad(Message msg) {
     Slack.SendMessage(msg.channel, "처리하는 인스턴스 id : " + Config.shadNo.ToString());
 }
 ```
+
+Presence API
+----
+```cs
+Shading.QueryPresences((now, max) => {
+    // now : 현재 온라인인 인스턴스 수
+    // max : 샤드 사이즈
+});
+```
