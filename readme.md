@@ -106,3 +106,8 @@ var joinned = Slack.joinnedChannels;
 
 var all = Slack.channels;
 ```
+
+스케일 아웃
+----
+__Slacker__는 수평 스케일 아웃을 지원합니다.<br>
+자세한 내용은 __doc__의 [샤딩](doc/shading.md) 참조
