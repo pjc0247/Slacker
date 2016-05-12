@@ -71,7 +71,7 @@ public void OnBootstrap() {
   Config.logMessage = true; // 봇이 수신한 메세지를 출력합니다.
   
   Config.logTrace = true; // 디버그 정보를 출력합니다.
-                          // 이 정보는 정규식 매칭 정보 등을 포함합니다.
+                          // 이 정보는 정규식 매칭 결과 등을 포함합니다.
 }
 ```
 
