@@ -5,40 +5,40 @@ Slacker
 
 Make Your OWN Bot.
 
-ÅäÅ« °¡Á®¿À±â
+í† í° ê°€ì ¸ì˜¤ê¸°
 ----
 __https://api.slack.com/docs/oauth-test-tokens__
 <br>
-º¿ µğ·ºÅä¸®¿¡ `token` ÆÄÀÏÀ» ¸¸µé°í °¡Á®¿Â ÅäÅ«À» ³Ö°í ÀúÀåÇÕ´Ï´Ù.
+ë´‡ ë””ë ‰í† ë¦¬ì— `token` íŒŒì¼ì„ ë§Œë“¤ê³  ê°€ì ¸ì˜¨ í† í°ì„ ë„£ê³  ì €ì¥í•©ë‹ˆë‹¤.
 
-¸í·É¾î Ãß°¡ÇÏ±â
+ëª…ë ¹ì–´ ì¶”ê°€í•˜ê¸°
 ----
-`plugins/` Æú´õ ¾Æ·¡¿¡ `.csx` ÆÄÀÏÀ» »ı¼ºÇÑ ÈÄ ¾Æ·¡¿Í °°ÀÌ ÀÔ·ÂÇÕ´Ï´Ù.
+`plugins/` í´ë” ì•„ë˜ì— `.csx` íŒŒì¼ì„ ìƒì„±í•œ í›„ ì•„ë˜ì™€ ê°™ì´ ì…ë ¥í•©ë‹ˆë‹¤.
 ```cs
 using System;
 using Slacker.Exports;
 
-[Subscribe("¾È³ç")]
+[Subscribe("ì•ˆë…•")]
 public void OnHello(Message msg) {
-  Slack.SendMessage(msg.channel, "¾È³ç " + msg.sender);
+  Slack.SendMessage(msg.channel, "ì•ˆë…• " + msg.sender);
 }
 ```
 
-ÀÌÈÄ `.csx` ÆÄÀÏÀ» ¼öÁ¤ÇÏ¸é º¿ÀÌ ÀÚµ¿À¸·Î º¯°æ»çÇ×À» Àç ·ÎµåÇÕ´Ï´Ù.
+ì´í›„ `.csx` íŒŒì¼ì„ ìˆ˜ì •í•˜ë©´ ë´‡ì´ ìë™ìœ¼ë¡œ ë³€ê²½ì‚¬í•­ì„ ì¬ ë¡œë“œí•©ë‹ˆë‹¤.
 
 
-Ä¸Ã³ »ç¿ëÇÏ±â
+ìº¡ì²˜ ì‚¬ìš©í•˜ê¸°
 ----
 ```cs
-// Á¤±Ô½Ä Ä¸Ã³
-[Subscribe("^µû¶óÇØ\\s(.+)$")]
+// ì •ê·œì‹ ìº¡ì²˜
+[Subscribe("^ë”°ë¼í•´\\s(.+)$")]
 public void OnEcho(Message msg){
 	Slack.SendMessage(msg.channel, msg.matchData.Groups[1].Value);
 }
 ```
 
 
-Message ±¸Á¶Ã¼
+Message êµ¬ì¡°ì²´
 ----
 ```cs
 public class Message {
@@ -49,4 +49,34 @@ public class Message {
   // System.Text.RegularExpressions
   public Match matchData { get; set; }
 }
+```
+
+Slack API
+----
+__ë‚´ í”„ë¡œí•„ ê°€ì ¸ì˜¤ê¸°__
+```cs
+var me = Slack.me;
+
+string id = me.id;
+string name = me.name;
+bool isBot = me.isBot;
+string email = me.email;
+```
+
+__ë©”ì„¸ì§€ ë³´ë‚´ê¸°__
+```cs
+Slack.SendMessage("CHANNEL_NAME", "MESSAGE");
+```
+
+__ìƒíƒœ ë³€ê²½í•˜ê¸°__
+```cs
+Slack.SetActive();
+Slack.SetAway();
+```
+
+__ì±„ë„__
+```cs
+var joinned = Slack.joinnedChannels;
+
+var all = Slack.channels;
 ```
