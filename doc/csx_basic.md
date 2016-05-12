@@ -40,5 +40,6 @@ public void OnHello(Message msg) {
   Persistent.count += 1;
 }
 ```
+* __Persistent__는 `dynamic`입니다.
 <br><br>
 * __주의__ : 프로그램을 강제 종료할 경우에는 저장되는 변수도 저장되지 않을 수 있습니다.
