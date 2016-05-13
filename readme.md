@@ -111,3 +111,8 @@ var all = Slack.channels;
 ----
 __Slacker__는 수평 스케일 아웃을 지원합니다.<br>
 자세한 내용은 __doc__의 [샤딩](doc/shading.md) 참조
+
+Heroku에 디플로이
+----
+https://github.com/pjc0247/slacker_buildpack<br>
+위 링크의 빌드팩과 가이드를 이용하면 __Heroku__에 봇을 무임승차 시킬 수 있습니다.
