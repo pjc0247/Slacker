@@ -4,15 +4,15 @@ ARGS 옵션
 명령줄 인수를 사용하여 봇 설정을 변경할 수 있습니다.<br>
 이 설정들은 json 설정값보다 우선시됩니다.
 
---shading <bool>
+--shading [bool]
 ----
 샤딩을 켜고 끌 지 여부를 설정합니다.
 
---shad-no <int>
+--shad-no [int]
 ----
 현재 인스턴스의 ID를 설정합니다.
 
---shad-size <int>
+--shad-size [int]
 ----
 전체 인스턴스의 사이즈를 설정합니다.
 
