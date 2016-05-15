@@ -16,13 +16,13 @@ __script.csx__
 ```cs
 [Subscribe("sharding_test")]
 public void OnShard(Message msg) {
-    if (Config.enableSharding == false) {
+    if (Sharding.isEnabled == false) {
         Slack.SendMessage(msg.channel, "샤딩 안켜짐.");
         return;
     } 
     
     Slack.SendMessage(msg.channel, "이 메세지는 한번만 전송되어야 합니다.");
-    Slack.SendMessage(msg.channel, "처리하는 인스턴스 id : " + Config.shardNo.ToString());
+    Slack.SendMessage(msg.channel, "처리하는 인스턴스 id : " + Sharding.no.ToString());
 }
 ```
 
