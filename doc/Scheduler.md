@@ -11,3 +11,11 @@ public void OnSchedule() {
     Console.WriteLine("I'M ALIVE.");
 }
 ```
+
+API 이용하기
+----
+```cs
+Scheduler.SetInterval(() => {
+    Console.WriteLine(1234);
+}, 1000);
+```
