@@ -33,6 +33,14 @@ public void OnEcho(Message msg){
 https://msdn.microsoft.com/ko-kr/library/system.text.regularexpressions.match(v=vs.90).aspx
 
 
+Scheduler
+----
+```cs
+[Schedule(10)]
+public void OnSchedule() {
+}
+```
+
 Deploy your bot on Heroku
 ----
 .Net assemblies can be deployed & executed on Heroku.<br>
