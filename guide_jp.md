@@ -15,6 +15,30 @@ public void OnBootstrap() {
 }
 ```
 
+Scheduler
+----
+```cs
+[Schedule(10)]
+public void OnSchedule() {
+  //　このメソッド１０秒まで実行されます。
+}
+```
+APIの使ってタスクをScheduleすることも出来ます。
+```cs
+Scheduler.SetTimeout(() => {
+  // ことlambdaは１０秒後に実行されます。
+}, 10);
+```
+
+Message Object
+----
+`Message` オブジェクトは下記の構造に構成されています。
+```cs
+public class Message {
+  public string text;
+}
+```
+
 Herokuでホスティングする方
 ----
 https://github.com/pjc0247/slacker_buildpack<br>
