@@ -43,3 +43,7 @@ Herokuでホスティングする方
 ----
 https://github.com/pjc0247/slacker_buildpack<br>
 この主題については上記のリンクを従ってください。
+
+コメント
+----
+__Slacker__はOpenSourceではありません。若し機能の追加を要請したい場合にはどうか教えてください。
