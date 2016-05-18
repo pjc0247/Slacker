@@ -45,3 +45,7 @@ Deploy your bot on Heroku
 ----
 .Net assemblies can be deployed & executed on Heroku.<br>
 Please refer to [this](https://github.com/pjc0247/slacker_buildpack) repo.
+
+Remarks
+----
+__Slacker__ is not an Open-Source project. If you have any feature requests, please let me know.
