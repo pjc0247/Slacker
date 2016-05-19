@@ -68,7 +68,7 @@ public void OnReceiveImage(Message msg){
 
 // Slack 파일 타입으로 필터링
 // https://api.slack.com/types/file
-[Subscribe(MessageType.File, name: "cpp")]
+[Subscribe(MessageType.File, fileType: "cpp")]
 ```
 
 __캡처 사용하기__
