@@ -53,6 +53,7 @@ __파일 수신하기__
 ```cs
 // MessageType을 File로 지정
 // 두번째 파라미터는 mime_type에 대한 필터입니다. (정규식)
+// 만약 mime_type을 지정하지 않을 경우 모든 파일을 수신합니다.
 [Subscribe(MessageType.File, "image/*")]
 public void OnReceiveImage(Message msg){
   // 수신한 파일의 정보를 가져옵니다.
