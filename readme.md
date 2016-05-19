@@ -33,6 +33,20 @@ public void OnHello(Message msg) {
 
 이후 `.csx` 파일을 수정하면 봇이 자동으로 변경사항을 재 로드합니다.
 
+이미지 전송하기
+----
+```cs
+[Subscribe("이미지")]
+public void OnImg(Message msg) {
+  var imageURL = "https://github.com/pjc0247/Slacker/raw/master/slack.png";
+  
+  msg.Reply(imageURL, "이미지 타이틀");
+  
+  // 이미지 타이틀 값은 옵션이므로 지정하지 않을 수 있습니다.
+  // msg.Reply(imageURL);
+}
+```
+
 
 캡처 사용하기
 ----
