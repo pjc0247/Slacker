@@ -1,6 +1,6 @@
 수평적 스케일 아웃
 ====
-![shad](img/1463063163965.jpg)<br><br>
+![shad](img/sharding.png)<br><br>
 
 __sharding_option.json__
 ```json
