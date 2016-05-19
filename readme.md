@@ -24,7 +24,10 @@ using Slacker.Exports;
 
 [Subscribe("안녕")]
 public void OnHello(Message msg) {
-  Slack.SendMessage(msg.channel, "안녕 " + msg.sender);
+  msg.Reply("안녕 " + msg.sender);
+  
+  // 또는,,
+  // Slack.SendMessage(msg.channel, "안녕 " + msg.sender);
 }
 ```
 
@@ -37,7 +40,7 @@ public void OnHello(Message msg) {
 // 정규식 캡처
 [Subscribe("^따라해\\s(.+)$")]
 public void OnEcho(Message msg){
-	Slack.SendMessage(msg.channel, msg.matchData.Groups[1].Value);
+  msg.Reply(msg.matchData.Groups[1].Value);
 }
 ```
 
