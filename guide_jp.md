@@ -15,6 +15,16 @@ public void OnBootstrap() {
 }
 ```
 
+SendMeesage
+----
+__SendImage__
+```cs
+var imageURL = "https://github.com/pjc0247/Slacker/raw/master/slack.png";
+
+// titleはオプショナルです。
+Slack.SendImage(msg.channel, imageURL, title: "IMAGE_TITLE");
+```
+
 Scheduler
 ----
 ```cs
