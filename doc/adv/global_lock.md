@@ -1,4 +1,4 @@
-GL
+GL (Global Lock)
 ====
 
 __Slacker__는 내부적으로 여러개의 스레드에 의해 구동됩니다.<br>
@@ -8,12 +8,35 @@ __Slacker__에 의해서 트리거되는 모든 작업은 글로벌 락을 획�
 
 RunOnBotContext
 ----
+유저가 직접 생성한 스레드 작업을 할 경우 해당 작업은 글로벌 락을 획득하지 못한 채 실행되기 때문에 경우에 따라서는 위험한 케이스가 발생할 수 있습니다.
+```cs
+SomeObject global;
+
+[Subscribe("hello")]
+public void OnHello(Message msg) {
+  (new Thread(() => {
+    // 유저가 생성한 스레드는 글로벌 락 없이 실행됩니다.
+    while(true) global.Foo();
+  }).Start();
+}
+
+[Subscribe("bye")]
+public void OnBye(Message msg) {
+  // Slacker가 실행한 메소드는
+  // 글로벌 락을 획득한 상태로 실행됩니다.
+  global.Bar();
+}
+```
+위의 코드는 두개의 스레드가 동기화 없이 공유자원에 접근하려고 하기 때문에 스레드 세이프하지 않습니다.<br><br>
+아래의 `RunOnBotContext` API를 사용하면 글로벌 락을 획득하고, 락 안에서 작업할 수 있습니다.
 ```cs
 Bot.RunOnBotContext(() => {
   // 이 영역의 코드는 Slacker의 글로벌 락에 의해서
   // 스레드 세이프가 보장됩니다.
+  global.Foo();
 });
 ```
+글로벌 락을 획득한 상태에서 너무 오랜 기간 작업하면 그동안 다른 메세지나 스케쥴러를 처리할 수 없음에 주의하세요.
 
 주의사항
 ----
