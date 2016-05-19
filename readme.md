@@ -54,12 +54,21 @@ __파일 수신하기__
 // MessageType을 File로 지정
 // 두번째 파라미터는 mime_type에 대한 필터입니다. (정규식)
 // 만약 mime_type을 지정하지 않을 경우 모든 파일을 수신합니다.
-[Subscribe(MessageType.File, "image/*")]
+[Subscribe(MessageType.File, mimeType: "image/*")]
 public void OnReceiveImage(Message msg){
   // 수신한 파일의 정보를 가져옵니다.
   // https://api.slack.com/types/file
   var fileInfo = msg.file;
 }
+```
+또는 `mimeType`이외에 다른 조건으로 필터를 만들 수 있습니다.
+```cs
+// 파일 이름으로 필터링
+[Subscribe(MessageType.File, name: "*.rb")]
+
+// Slack 파일 타입으로 필터링
+// https://api.slack.com/types/file
+[Subscribe(MessageType.File, name: "cpp")]
 ```
 
 __캡처 사용하기__
