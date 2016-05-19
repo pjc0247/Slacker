@@ -32,7 +32,6 @@ public class Gist {
                 {"User-Agent", "SlackerGistClient"}
             },
             (code, body) => {
-            Console.WriteLine(code);
                 if (code != 201)
                     callback(null);
                 else
