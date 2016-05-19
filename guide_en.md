@@ -21,6 +21,14 @@ public void OnHello(Message msg) {
 }
 ```
 
+__SendImage__
+```cs
+var imageURL = "https://github.com/pjc0247/Slacker/raw/master/slack.png";
+
+// Note that title is an optional parameter.
+Slack.SendImage(msg.channel, imageURL, title: "IMAGE_TITLE");
+```
+
 __Using regular expressions__<br>
 You can pass a regular expression, and match result will be filled in `msg` object.
 ```cs
