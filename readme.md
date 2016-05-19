@@ -47,9 +47,21 @@ public void OnImg(Message msg) {
 }
 ```
 
-
-캡처 사용하기
+메세지 수신하기 - 고급
 ----
+__파일 수신하기__
+```cs
+// MessageType을 File로 지정
+// 두번째 파라미터는 mime_type에 대한 필터입니다. (정규식)
+[Subscribe(MessageType.File, "image/*")]
+public void OnReceiveImage(Message msg){
+  // 수신한 파일의 정보를 가져옵니다.
+  // https://api.slack.com/types/file
+  var fileInfo = msg.file;
+}
+```
+
+__캡처 사용하기__
 ```cs
 // 정규식 캡처
 [Subscribe("^따라해\\s(.+)$")]
