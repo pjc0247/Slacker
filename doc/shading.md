@@ -46,3 +46,11 @@ public void OnBootstrap() {
     // 이 코드는 1번 인스턴스에서만 실행됩니다.
 }
 ```
+
+명령줄 인수
+----
+샤드 옵션은 명령줄 인수로 컨트롤할 수 있습니다.<br>
+이 값들은 파일로 지정한 설정보다 우선시됩니다. 자세한 사항은 아래 가이드들을 참고해주세요.
+<br>
+__[CmdArgs](https://github.com/pjc0247/Slacker/blob/master/doc/cmd_options.md)__<br>
+__[Spawner](https://github.com/pjc0247/Slacker/blob/master/doc/adv/spawner.md)__<br>
