@@ -1,7 +1,7 @@
 Slacker
 ====
 
-![slack](slack.png)
+<img src="slack.png" width="200px">
 
 Make Your OWN Bot.
 
