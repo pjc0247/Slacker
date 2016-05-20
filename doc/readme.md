@@ -11,3 +11,7 @@ doc
 * [Global Lock](adv/global_lock.md)
 * [Http 통신 사용하기](adv/http.md)
 * [Bot Spawner](adv/spawner.md)
+
+외부 링크
+----
+* [Heroku에 봇 업로드하기](https://github.com/pjc0247/slacker_buildpack/tree/master/doc)
