@@ -33,7 +33,7 @@ Scheduler
 ```cs
 [Schedule(10)]
 public void OnSchedule() {
-  //　このメソッド１０秒まで実行されます。
+  //　このメソッド１０秒毎に実行されます。
 }
 ```
 APIの使ってタスクをScheduleすることも出来ます。
