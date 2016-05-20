@@ -1,6 +1,11 @@
 Slacker Guide
 ====
 
+Set-up
+----
+Create `token` file on bot directory and put your Slack access token.<br>
+(You can find Slack access token [here](https://api.slack.com/docs/oauth-test-tokens))
+
 Bootstrap
 ----
 Once recompiled, Slacker will invoke bootstrap methods.
