@@ -43,3 +43,4 @@ public void OnHello(Message msg) {
 * __Persistent__는 `dynamic`입니다.
 <br><br>
 * __주의__ : 프로그램을 강제 종료할 경우에는 저장되는 변수도 저장되지 않을 수 있습니다.
+* `Persistent`는 단일 인스턴스 환경만을 고려해서 작성되었습니다.
