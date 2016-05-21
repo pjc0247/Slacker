@@ -5,6 +5,7 @@ doc
 ----
 * [csx 파일 작성하기](csx_basic.md)
 * [스케쥴러 사용하기](Scheduler.md.md)
+* [VS Code 사용하기](vscode.md)
 
 고급 주제
 ----
