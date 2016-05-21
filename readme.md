@@ -3,7 +3,8 @@ Slacker
 
 <img src="slack.png" width="200px">
 
-Make Your OWN Bot.
+Make Your OWN Bot.<br>
+[Download](https://github.com/pjc0247/Slacker/releases)
 
 Screenshot
 ----
