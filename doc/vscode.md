@@ -9,6 +9,8 @@ VS Code에서 에디팅하기
 ext install csharp
 ```
 ![cs](img/cs_plugin.png)<br>
+<br>
+설치된 이후에는 `.csx` 파일을 열면 자동으로 하이라이팅 된 에디터가 표시됩니다.
 
 링크
 ----
