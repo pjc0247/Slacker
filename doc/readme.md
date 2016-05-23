@@ -4,7 +4,8 @@ doc
 기본 사용법
 ----
 * [csx 파일 작성하기](csx_basic.md)
-* [스케쥴러 사용하기](Scheduler.md.md)
+* [스크립트 옵션 지정하기](script_option.md)
+* [스케쥴러 사용하기](Scheduler.md)
 * [VS Code 사용하기](vscode.md)
 
 고급 주제
