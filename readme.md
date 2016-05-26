@@ -14,7 +14,10 @@ Screenshot
 ----
 __https://api.slack.com/docs/oauth-test-tokens__
 <br>
-봇 디렉토리에 `token` 파일을 만들고 가져온 토큰을 넣고 저장합니다.
+봇 디렉토리에 `token` 파일을 만들고 가져온 토큰을 넣고 저장합니다.<br>
+<br>
+혹은 봇 토큰을 사용하여도 됩니다.<br>
+봇 토큰 생성은 [Slack 가이드](https://api.slack.com/bot-users)의 __Custom bot users__ 항목을 참조해 주세요.
 
 명령어 추가하기
 ----
