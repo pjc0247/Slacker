@@ -1,6 +1,8 @@
 Slacker Guide
 ====
 
+* `guide_en` is not complete. Some examples may not be up to date.
+
 Set-up
 ----
 Create `token` file on bot directory and put your Slack access token.<br>
