@@ -6,7 +6,9 @@ Slacker Guide
 Set-up
 ----
 Create `token` file on bot directory and put your Slack access token.<br>
-(You can find Slack access token [here](https://api.slack.com/docs/oauth-test-tokens))
+(You can find Slack access token [here](https://api.slack.com/docs/oauth-test-tokens))<br>
+<br>
+or You can use a `Bot token`, please refer to [this guide](https://api.slack.com/bot-users).
 
 Bootstrap
 ----
@@ -18,7 +20,7 @@ public void OnBootstrap() {
 }
 ```
 
-Add commands
+Add bot commands
 ----
 __Basic command__
 ```cs
@@ -28,7 +30,8 @@ public void OnHello(Message msg) {
 }
 ```
 
-__SendImage__
+__SendImage__<br>
+You can send a image via `SendImage` method.
 ```cs
 var imageURL = "https://github.com/pjc0247/Slacker/raw/master/slack.png";
 
@@ -37,7 +40,7 @@ Slack.SendImage(msg.channel, imageURL, title: "IMAGE_TITLE");
 ```
 
 __Using regular expressions__<br>
-You can pass a regular expression, and match result will be filled in `msg` object.
+You can also use a regular expression, and match result will be filled in `msg` object.
 ```cs
 [Subscribe("^echo\\s(.+)$")]
 public void OnEcho(Message msg){
@@ -47,6 +50,19 @@ public void OnEcho(Message msg){
 <br>
 https://msdn.microsoft.com/ko-kr/library/system.text.regularexpressions.match(v=vs.90).aspx
 
+Receive Files
+----
+```cs
+// MessageType을 File로 지정
+// `mimeType` is optional parameter.
+//   If you want to receive all file types, do not specify it.
+[Subscribe(MessageType.File, mimeType: "image/*")]
+public void OnReceiveImage(Message msg){
+  // 수신한 파일의 정보를 가져옵니다.
+  // https://api.slack.com/types/file
+  var fileInfo = msg.file;
+}
+```
 
 Scheduler
 ----
@@ -54,6 +70,34 @@ Scheduler
 [Schedule(10)]
 public void OnSchedule() {
 }
+```
+
+Slack API
+----
+__me__
+```cs
+var me = Slack.me;
+
+string id = me.id;
+string name = me.name;
+// whether current user is bot or not.
+// if you use the `Bot token` this value will be set to `true`
+bool isBot = me.isBot;
+string email = me.email;
+```
+
+__Set presence__
+```cs
+Slack.SetActive();
+Slack.SetAway();
+```
+
+__Channels__
+```cs
+var joinned = Slack.joinnedChannels;
+
+// all channels in your team.
+var all = Slack.channels;
 ```
 
 Deploy your bot on Heroku
