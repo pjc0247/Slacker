@@ -53,13 +53,12 @@ https://msdn.microsoft.com/ko-kr/library/system.text.regularexpressions.match(v=
 Receive Files
 ----
 ```cs
-// MessageType을 File로 지정
 // `mimeType` is optional parameter.
 //   If you want to receive all file types, do not specify it.
 [Subscribe(MessageType.File, mimeType: "image/*")]
 public void OnReceiveImage(Message msg){
-  // 수신한 파일의 정보를 가져옵니다.
-  // https://api.slack.com/types/file
+  // below link decribes structure of the `file` object
+  //   * https://api.slack.com/types/file
   var fileInfo = msg.file;
 }
 ```
