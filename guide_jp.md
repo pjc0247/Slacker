@@ -54,6 +54,18 @@ public class Message {
 }
 ```
 
+Slack API
+----
+__me__
+```cs
+var me = Slack.me;
+
+string id = me.id;
+string name = me.name;
+bool isBot = me.isBot;
+string email = me.email;
+```
+
 Herokuでホスティングする方
 ----
 https://github.com/pjc0247/slacker_buildpack<br>
