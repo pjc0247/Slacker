@@ -6,7 +6,7 @@ Slacker
 Make Your OWN Bot.<br>
 [Download](https://github.com/pjc0247/Slacker/releases)<br>
 <br>
-<sub>How-To-Guide : [English](guide_en.md)</sub><br>
+<sub>How-To-Guide : [English](guide_en.md), [Japanese](guide_jp.md)</sub><br>
 <sub>Documentation : [Korean](doc)</sub>
 
 Screenshot
