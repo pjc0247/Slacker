@@ -23,7 +23,7 @@ public void OnBootstrap() {
 
 Add bot commands
 ----
-Create a `WHATEVERYOUWANT.csx` file under `plugins/` directory and write below code.
+Create a `WHATEVERYOUWANT.csx` file under `plugins/` directory and write below code.<br>
 __Basic command__
 ```cs
 using System;
