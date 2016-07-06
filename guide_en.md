@@ -34,7 +34,7 @@ public void OnHello(Message msg) {
   msg.Reply("Hi, " + msg.sender);
   
   // `Reply` is a shortcut method,
-  // the below line will be perform a exactly same action
+  // the below line will perform a exactly same action
   // Slack.SendMessage(msg.channel, "Hi, " + msg.sender);
 }
 ```
