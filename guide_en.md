@@ -34,7 +34,7 @@ public void OnBootstrap2() { }
 Add bot commands
 ----
 __Basic command__<br>
-Create a `WHATEVERYOUWANT.csx` file under `plugins/` directory and write below code.
+Create a `WHATEVERYOUWANT.csx` file under `plugins/` directory and write code below.
 ```cs
 using System;
 using Slacker.Exports;
@@ -48,10 +48,10 @@ public void OnHello(Message msg) {
   // Slack.SendMessage(msg.channel, "Hi, " + msg.sender);
 }
 ```
-All `.csx` file under `plugins/` directory will be automatically reloaded when changed. (It means, you don't have to restart your bot.)
+All `.csx` file under `plugins/` directory will be automatically reloaded when changed. (which means, you don't have to restart your bot.)
 
 __SendImage__<br>
-Below example decribes how to send a image message via `SendImage` method,
+The example below decribes how to send a image message via `SendImage` method,
 ```cs
 var imageURL = "https://github.com/pjc0247/Slacker/raw/master/slack.png";
 
