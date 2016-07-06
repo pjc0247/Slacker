@@ -2,7 +2,7 @@ Slacker Guide
 ====
 
 * `guide_en` is not complete. Some examples may not be up to date.*
-* Other Languages : [Korean](https://github.com/pjc0247/Slacker), [Japanes](https://github.com/pjc0247/Slacker/guide_jp.md)
+* Other Languages : [Korean](https://github.com/pjc0247/Slacker), [Japanes](https://github.com/pjc0247/Slacker/blob/master/guide_jp.md)
 
 Set-up
 ----
