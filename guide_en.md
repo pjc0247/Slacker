@@ -9,7 +9,7 @@ Set-up
 Create `token` file on bot directory and put your Slack access token.<br>
 (You can find Slack access token [here](https://api.slack.com/docs/oauth-test-tokens))<br>
 <br>
-or You can use a `Bot token`, please refer to [this guide](https://api.slack.com/bot-users).
+or If you want to use a `Bot token`, please refer to [this guide](https://api.slack.com/bot-users).
 
 Bootstrap
 ----
