@@ -23,8 +23,8 @@ public void OnBootstrap() {
 
 Add bot commands
 ----
-Create a `WHATEVERYOUWANT.csx` file under `plugins/` directory and write below code.<br>
-__Basic command__
+__Basic command__<br>
+Create a `WHATEVERYOUWANT.csx` file under `plugins/` directory and write below code.
 ```cs
 using System;
 using Slacker.Exports;
