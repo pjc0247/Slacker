@@ -21,6 +21,15 @@ public void OnBootstrap() {
 }
 ```
 
+Multiple `Bootstrap` methods are allowed.
+```cs
+[Bootstrap]
+public void OnBootstrap1() { }
+
+[Bootstrap]
+public void OnBootstrap2() { }
+```
+
 Add bot commands
 ----
 __Basic command__<br>
