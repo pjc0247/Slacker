@@ -38,7 +38,7 @@ public void OnHello(Message msg) {
   // Slack.SendMessage(msg.channel, "Hi, " + msg.sender);
 }
 ```
-All `.csx` file under `plugins/` directory will be automatically reloaded when changed.
+All `.csx` file under `plugins/` directory will be automatically reloaded when changed. (It means, you don't have to restart your bot.)
 
 __SendImage__<br>
 Below example decribes how to send a image message via `SendImage` method,
