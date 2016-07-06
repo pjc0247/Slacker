@@ -29,6 +29,7 @@ public void OnBootstrap1() { }
 [Bootstrap]
 public void OnBootstrap2() { }
 ```
+* There is no method to specify order between `Bootstrap` methods.
 
 Add bot commands
 ----
