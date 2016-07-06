@@ -1,7 +1,8 @@
 Slacker Guide
 ====
 
-* `guide_en` is not complete. Some examples may not be up to date.
+* `guide_en` is not complete. Some examples may not be up to date.*
+* Other Languages : [Korean](https://github.com/pjc0247/Slacker), [Japanes](https://github.com/pjc0247/Slacker/guide_jp.md)
 
 Set-up
 ----
@@ -22,28 +23,39 @@ public void OnBootstrap() {
 
 Add bot commands
 ----
+Create a `WHATEVERYOUWANT.csx` file under `plugins/` directory and write below code.
 __Basic command__
 ```cs
+using System;
+using Slacker.Exports;
+
 [Subscribe("hello")]
 public void OnHello(Message msg) {
-  Slack.SendMessage(msg.channel, "Hi, " + msg.sender);
+  msg.Reply("Hi, " + msg.sender);
+  
+  // `Reply` is a shortcut method,
+  // the below line will be perform a exactly same action
+  // Slack.SendMessage(msg.channel, "Hi, " + msg.sender);
 }
 ```
+All `.csx` file under `plugins/` directory will be automatically reloaded when changed.
 
 __SendImage__<br>
-You can send a image via `SendImage` method.
+Below example decribes how to send a image message via `SendImage` method,
 ```cs
 var imageURL = "https://github.com/pjc0247/Slacker/raw/master/slack.png";
 
 // Note that title is an optional parameter.
+// You can send images without titles.
 Slack.SendImage(msg.channel, imageURL, title: "IMAGE_TITLE");
 ```
 
 __Using regular expressions__<br>
-You can also use a regular expression, and match result will be filled in `msg` object.
+You can also use a regular expression, and match result will be filled in `msg` object. This is useful when you want to create a flexible/fluent commands.
 ```cs
 [Subscribe("^echo\\s(.+)$")]
 public void OnEcho(Message msg){
+    // captured values can be accessed though `matchData.Groups` property.
     Slack.SendMessage(msg.channel, msg.matchData.Groups[1].Value);
 }
 ```
@@ -54,7 +66,7 @@ Receive Files
 ----
 ```cs
 // `mimeType` is optional parameter.
-//   If you want to receive all file types, do not specify it.
+//   If you want to receive all file types, please do not specify it.
 [Subscribe(MessageType.File, mimeType: "image/*")]
 public void OnReceiveImage(Message msg){
   // below link decribes structure of the `file` object
@@ -65,9 +77,11 @@ public void OnReceiveImage(Message msg){
 
 Scheduler
 ----
+In some cases, your bot may need to execute background tasks (Such as web-crawling, ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~).
 ```cs
 [Schedule(10)]
 public void OnSchedule() {
+  // this method will be executed every 10ms.
 }
 ```
 
