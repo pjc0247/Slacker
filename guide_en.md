@@ -131,7 +131,7 @@ var all = Slack.channels;
 
 Concurrency
 -----
-Since there is a GL(Global Lock), all methods executed by `Slacker` are thread-safe. It makes users can write scripts without any threading concerns. However you SHOULD NOT ues synchronous APIs in `Subscribe` or `Schedule` methods. If your code have any BLOCKING routines in these methods, entire program will be hang till it ends.<br>
+Since there is a GL(Global Lock), all methods executed by `Slacker` are thread-safe. It makes users can write scripts without any threading concerns. However you SHOULD NOT ues synchronous APIs in `Subscribe` or `Schedule` methods. If your code have any BLOCKING routines in these methods, entire program will be hung till it ends.<br>
 The example below shows how to handle synchronous task without hangs.
 ```cs
 [Subscribe("hi")]
