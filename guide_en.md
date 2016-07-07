@@ -94,6 +94,12 @@ public void OnSchedule() {
   // this method will be executed every 10ms.
 }
 ```
+Also, there is an API which enables you to schedule tasks manually.
+```cs
+Scheduler.SetInterval(() => {
+    Console.WriteLine("AFTER 1000MS");
+}, 1000);
+```
 
 Slack API
 ----
@@ -122,6 +128,28 @@ var joinned = Slack.joinnedChannels;
 // all channels in your team.
 var all = Slack.channels;
 ```
+
+Concurrency
+-----
+Since there is an GL(Global Lock), all methods executed by `Slacker` are thread-safe. It makes that users can write scripts without any threading concerns. However you SHOULD NOT ues synchronous APIs in `Subscribe` or `Schedule` methods. If your code have any BLOCKING routines in Slacker-managed thread, entire program will be hang till it ends.<br>
+The example below shows how to handle synchronous task without hangs.
+```cs
+[Subscribe("hi")]
+public void OnHi(Message msg) {
+  // Slacker-Managed thread.
+  
+  new Thread(() => {
+    // Non-Slacker-Managed thread
+    var result = SomeSyncCall();
+    
+    Bot.RunOnBotContext(() => {
+      // will be executed on Slacker-Managed thread again.
+      msg.Reply(result);  
+    });
+  }).Start();
+}
+```
+* Currently, `async/await` is not supported.
 
 Deploy your bot on Heroku
 ----
