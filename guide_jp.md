@@ -5,7 +5,7 @@ Slacker ガイド
 
 セットアップ
 ----
-Slackトークンを`plugins/`フォルダの下の`token`ファイルで位置してくださ。
+Slackトークン`token`ファイルで位置してくださ。 もしBot専用トークンを使いたい場合には[この](https://api.slack.com/bot-users)リンクのガイドを参考してください。
 
 スクリプトの作成
 ----
@@ -14,12 +14,14 @@ Slackトークンを`plugins/`フォルダの下の`token`ファイルで位置�
 
 Bootstrap
 ----
+`Bootstrap`を使ってBotの初期化メソードを作成することが出来ます。
 ```cs
 [Bootstrap]
 public void OnBootstrap() {
   // このメソッドはSlackerの初期化時点に実行されます。
 }
 ```
+* 現在、２つ以上の`Bootstrap`メソードを使うのは出来ますが、実行順序を指定するのはできません。
 
 SendMeesage
 ----
