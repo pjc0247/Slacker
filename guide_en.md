@@ -137,9 +137,13 @@ The example below shows how to handle synchronous task without hangs.
 [Subscribe("hi")]
 public void OnHi(Message msg) {
   // Slacker-Managed thread.
+  //   DO : access global vars
+  //   DONT : sync calls
   
   new Thread(() => {
     // Non-Slacker-Managed thread
+    //   DO : sync calls 
+    //   DONT : access global vars
     var result = SomeSyncCall();
     
     Bot.RunOnBotContext(() => {
