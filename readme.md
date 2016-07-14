@@ -153,6 +153,20 @@ var joinned = Slack.joinnedChannels;
 var all = Slack.channels;
 ```
 
+비동기 작업
+----
+__[v.1.2.0](https://github.com/pjc0247/Slacker/releases/tag/v.1.2.0)__ 버전부터 `async/await`를 지원합니다.
+```c#
+[Subscribe("test")]
+public void OnTest(Message msg) {
+  msg.Reply("Delay");
+  
+  await Task.Delay(3000);
+  
+  msg.Reply("After 3secs");
+}
+```
+
 스케일 아웃
 ----
 __Slacker__는 수평 스케일 아웃을 지원합니다.<br>
