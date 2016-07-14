@@ -4,9 +4,9 @@ csx 파일 작성하기
 
 공유 변수 사용하기
 ----
-전역 스코프에 변수를 선언하면 변수가 생성됩니다.
+전역 스코프에 `static` 변수를 선언하면 변수가 생성됩니다.
 ```cs
-int count = 0;
+static int count = 0;
 
 [Subscribe("Hello")]
 public void OnHello(Message msg) {
