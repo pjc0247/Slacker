@@ -19,3 +19,17 @@ Scheduler.SetInterval(() => {
     Console.WriteLine(1234);
 }, 1000);
 ```
+
+최소 간격 설정하기
+----
+`Scheduler`의 해상도를 변경할 수 있습니다. 이 값이 낮으면 낮을수록 Scheduler가 더 자주 깨어납니다.
+```cs
+// ms 단위로 최소 간격을 설정합니다.
+Config.schedulerMinInterval = 1000;
+```
+혹은 `script_option.json`
+```json
+{
+    "scheduler_min_interval" : 1000
+}
+```
