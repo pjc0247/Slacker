@@ -162,7 +162,7 @@ var all = Slack.channels;
 __[v.1.2.0](https://github.com/pjc0247/Slacker/releases/tag/v.1.2.0)__ 버전부터 `async/await`를 지원합니다.
 ```c#
 [Subscribe("test")]
-public void OnTest(Message msg) {
+public async void OnTest(Message msg) {
   msg.Reply("Delay");
   
   await Task.Delay(3000);
