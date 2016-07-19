@@ -190,4 +190,5 @@ https://github.com/pjc0247/slacker_buildpack<br>
 
 코멘트
 ----
-__Slacker__는 오픈 소스 프로젝트가 아닙니다. 하지만 기능 추가 등의 요청사항이 있을 경우 언제든지 알려주시기 바랍니다.
+__Slacker__는 오픈 소스 프로젝트가 아닙니다. 하지만 기능 추가 등의 요청사항이 있을 경우 언제든지 알려주시기 바랍니다.<br>
+Slacker 바이너리와 함께 기본 배포되는 모든 `.csx` [스크립트들(Github, Jenkins 모듈)](https://github.com/pjc0247/Slacker/tree/master/src/plugins)은 `public domain` 입니다. 수정 후 재배포를 포함한 모든 형태의 이용이 가능합니다.
