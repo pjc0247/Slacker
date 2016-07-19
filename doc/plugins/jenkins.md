@@ -14,6 +14,9 @@ public void OnJenkins(Message msg){
     var job = jenkins.GetJob("BUILD_ITEM_NAME");
 
     job.Build(
+        // 빌드 파라미터입니다.
+        //  만약 빌드 파라미터가 없는 경우 빈 Dictionary / null
+        //  를 넣지 마시고, 파라미터를 아예 스킵해주세요.
         new Dictionary<string, object>() {
             {"build_param", "value"}
         },
