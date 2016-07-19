@@ -9,14 +9,17 @@ static string password = "asdf";
 [Subscribe("jenkins")]
 public void OnJenkins(Message msg){
     var jenkins = Jenkins.Create(endpoint, id, password);
-    var job = jenkins.GetJob("test_");
+    var job = jenkins.GetJob("BUILD_ITEM_NAME");
 
     job.Build(
         new Dictionary<string, object>() {
-            {"asdf", "Asdf"}
+            {"build_param", "value"}
         },
-        (_) => {
-          msg.Reply("Done");
+        (done) => {
+            if (done == true)
+                msg.Reply("Done");
+            else
+                msg.Reply("Failed");
         });
 }
 ```
