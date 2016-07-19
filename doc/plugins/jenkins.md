@@ -1,6 +1,8 @@
 Jenkins
 ====
 
+바이너리와 함께 배포되는 __Jenkins__ 모듈의 사용법을 보여줍니다.<br>
+https://github.com/pjc0247/Slacker/blob/master/src/plugins/jenkins.csx
 ```cs
 static string endpoint = "http://1.1.1.1/";
 static string id = "pjc";
