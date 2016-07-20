@@ -54,3 +54,7 @@ public void OnBootstrap() {
 <br>
 __[CmdArgs](https://github.com/pjc0247/Slacker/blob/master/doc/cmd_options.md)__<br>
 __[Spawner](https://github.com/pjc0247/Slacker/blob/master/doc/adv/spawner.md)__<br>
+
+자동 스케일 아웃
+----
+https://github.com/pjc0247/Slacker/blob/master/doc/adv/auto_sharding.md
