@@ -17,6 +17,15 @@ await Redis.UpdateIntAsync("level", 10);
 await Redis.AddIntAsync("level", 10);
 ```
 
+키 삭제하기
+----
+```cs
+await Redis.Delete("level");
+
+// 10초후 삭제
+await Redis.Expire("level", TimeSpan.FromSeconds(10));
+```
+
 RAW API 이용하기
 ----
 만약 Redis의 모든 기능을 이용하고 싶다면, 내부적으로 사용하는 Redis 객체를 가져와 작업합니다.<br>
