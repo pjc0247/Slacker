@@ -13,6 +13,8 @@ doc
 * [Global Lock](adv/global_lock.md)
 * [Http 통신 사용하기](adv/http.md)
 * [Bot Spawner](adv/spawner.md)
+* [Redis](adv/redis.md)
+* [Auto scale-out](adv/auto_sharding.md)
 
 외부 링크
 ----
