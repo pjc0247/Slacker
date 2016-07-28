@@ -26,6 +26,24 @@ await Redis.DeleteAsync("level");
 await Redis.ExpireAsync("level", TimeSpan.FromSeconds(10));
 ```
 
+PubSub 이용하기
+----
+__Redis__의 PUBSUB기능을 이용하여 노드 간 메세지 송수신을 수행할 수 있습니다.<br>
+<br>
+__송신하기__
+```cs
+await Redis.PublishAsync("q.rini", "HELLO WORLD");
+```
+__수신하기__
+```cs
+// 정규식은 사용할 수 없지만, 와일드카드문자 `*`는 사용이 가능합니다.
+[RedisSubscribe("q.*")]
+public void OnRedisMessage(Message msg) {
+  Console.WriteLine( msg.message );
+  Console.WriteLine( msg.channel );
+}
+```
+
 RAW API 이용하기
 ----
 만약 Redis의 모든 기능을 이용하고 싶다면, 내부적으로 사용하는 Redis 객체를 가져와 작업합니다.<br>
