@@ -20,10 +20,10 @@ await Redis.AddIntAsync("level", 10);
 키 삭제하기
 ----
 ```cs
-await Redis.Delete("level");
+await Redis.DeleteAsync("level");
 
 // 10초후 삭제
-await Redis.Expire("level", TimeSpan.FromSeconds(10));
+await Redis.ExpireAsync("level", TimeSpan.FromSeconds(10));
 ```
 
 RAW API 이용하기
