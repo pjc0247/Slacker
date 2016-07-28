@@ -41,6 +41,10 @@ __수신하기__
 public void OnRedisMessage(Message msg) {
   Console.WriteLine( msg.message );
   Console.WriteLine( msg.channel );
+  
+  // RedisMessage에는 Reply같은 쇼트컷 메소드를 사용할 수 없습니다.
+  // Redis.PublishAsync 메소드를 이용해 주세요.
+  // msg.Reply("A");
 }
 ```
 
