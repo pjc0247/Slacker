@@ -23,12 +23,23 @@ Data Operations
 await Redis.SetIntAsync("key", 10);
 // with TTL
 await Redis.SetIntAsync("key", 10, TimeSpan.FromSecond(100));
+```
+
+```cs
+var n = await Redis.GetIntAsync("key", 10 /* default value */);
 
 await Redis.SetStringAsync("key", "Hello World");
+var str = await Redis.GetStringAsync("key"); // "Hello World"
 ```
 
 ```cs
 await Redis.AddStringAsync("key", "Hello world");
 await Redis.UpdateStringAsync("key", "Hello world");
 await Redis.SetStringAsync("key", "Hello world");
+```
+
+```cs
+await Redis.DeleteAsync("key");
+
+await Redis.ExpireAsync("key", TimeSpan.FromSecond(100));
 ```
