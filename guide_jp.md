@@ -69,6 +69,20 @@ bool isBot = me.isBot;
 string email = me.email;
 ```
 
+Async Task
+----
+`v.1.2.0`から`async/await`キーワードを使えます。
+```cs
+[Subscribe("test")]
+public async void OnTest(Message msg) {
+  msg.Reply("Delay");
+
+  await Task.Delay(3000);
+
+  msg.Reply("After 3secs");
+}
+```
+
 Herokuでホスティングする方
 ----
 https://github.com/pjc0247/slacker_buildpack<br>
@@ -76,4 +90,4 @@ https://github.com/pjc0247/slacker_buildpack<br>
 
 コメント
 ----
-__Slacker__はOpenSourceではありません。若し機能の追加を要請したい場合にはどうか教えてください。
+__Slacker__はOpenSourceではありません。若し機能の追加を要請したい場合にはどうか教えてください。<br>
