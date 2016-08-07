@@ -153,7 +153,7 @@ public void OnHi(Message msg) {
   }).Start();
 }
 ```
-* Currently, `async/await` is not supported.
+* ~~Currently, `async/await` is not supported.~~ `async/await` feature is also supported since [v.1.2.0](https://github.com/pjc0247/Slacker/releases/tag/v.1.2.0)
 
 Deploy your bot on Heroku
 ----
