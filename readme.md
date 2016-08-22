@@ -53,7 +53,6 @@ public void OnImg(Message msg) {
   // msg.Reply(imageURL);
 }
 ```
-__로컬 이미지 전송은 v.1.3.0 예정__<br>
 또는 로컬 이미지를 전송할 수 있습니다.<br>
 이는 이미지를 슬랙 서버로 전송하는 과정을 거치므로 비동기로 동작합니다.
 ```cs
