@@ -93,6 +93,25 @@ public void OnEcho(Message msg){
 }
 ```
 
+User Storage
+----
+```
+준비중
+```
+유저마다 독립적으로 분리되는 저장공간을 사용할 수 있습니다.<br>
+`Subscribe` 메소드의 두번째 파라미터에 아래와 같이 적으면 자동으로 유저 스토리지가 사용됩니다.
+```cs
+[Subscribe("user_storage")]
+public void OnUserStorageTest(Message msg, Dictionray<string, object> userStorage) {
+  userStorage["score"] = 100;
+}
+```
+__사용할 수 있는 유저 스토리지 엔진__
+* UserStorageFileSys
+  * 별도의 설정 필요없이 바로 사용 가능한 엔진입니다.
+* UserStorageRedis
+  * 레디스에 저장합니다. 레디스는 공유 메모리이므로 여러개의 `Slacker` 인스턴스를 띄울 경우 적합합니다.
+
 Message 구조체
 ----
 ```cs
